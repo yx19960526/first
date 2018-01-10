@@ -1,0 +1,24 @@
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(function($){
+	$('body').css({background:'#000',overflow:'hidden'});
+	var div = $('<div id="odiv" style="color:#fff;position:absolute" >☆</div>');
+
+	//获取页面的宽度，利用这个数来算出，雪花开始时left的值
+	var SW = $(window).width();
+	//获取页面的高度 相当于雪花下落结束时Y轴的位置
+	var SH = $(window).height();
+	setInterval(function(){
+	var left = Math.random()* SW;
+	var end  = Math.random()* SW;
+	div.clone().appendTo($("body")).css({
+		"left":left,
+	}).animate({left:end+'px',top:SH},5000,function(){
+		$(this).remove();
+	});
+	},50);
+	
+	
+})
+
+</script>
