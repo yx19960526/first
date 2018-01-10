@@ -1,0 +1,17 @@
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(function($){
+	$.ajax({
+		async:true,
+		url:'http://127.0.0.1/test.php',
+		type:'post',
+		data:{'uname':'admin','upass':'admin'},
+		dataType:'xml',
+		//jsonp:'callback',
+		//jsonpCallback:'func',
+		success:function(mas){
+			console.log(mas);
+		}
+	});
+});
+</script>
